@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h2><%= @game.winner.titleize %> won!!</h2>
+<p class="lead">
+  <i class="fa fa-5x fa-<%= @winner_throw %> text-<%= throw_color(@winner_throw) %>"></i>
+  <span class="text-<%= throw_color(@winner_throw) %>"><strong><%= winner_action %></strong></span>
+  <i class="fa fa-5x fa-<%= @loser_throw %> text-<%= throw_color(@loser_throw) %>"></i>
+</p>
+
+
+<p><%= link_to 'New Game', new_game_path %></p>
+<p><%= link_to 'Back', games_path %></p>

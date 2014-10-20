@@ -1,0 +1,28 @@
+<h1>
+  <span class="text-<%= throw_color('rocket') %>">
+    <i class="fa fa-rocket"></i>Rocket
+  </span>,
+  <span class="text-<%= throw_color('paper-plane') %>">
+    <i class="fa fa-paper-plane"></i>Paper-plane
+  </span>,
+  <span class="text-<%= throw_color('scissors') %>">
+    <i class="fa fa-scissors"></i>Scissors
+  </span>
+</h1>
+
+<p><strong><%= link_to 'New Game', new_game_path, class: 'btn btn-primary'  %></strong></p>
+
+<ul class="inline">
+  <% @games.each do |game| %>
+    <p>
+      <%= "#{game.computer_throw} vs. #{game.user_throw}" %>
+      <br />
+      Winner: <%= game.winner %>
+      <br />
+      <%= link_to 'Show', game %>
+      <br />
+      <%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </p>
+  <% end %>
+</ul>
+
